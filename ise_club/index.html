@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- ok -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -30,11 +33,11 @@
             <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
         <div class=" text-box">
-            <h1>World's biggest University</h1>
+            <h1>ISE-CLUB <span id="changeText"></span></h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint in dignissimos voluptas rem quidem.<br>
                 Harum,nam! Ipsum est, deleniti nobis aut commodi cum ex vitae voluptatum repellat veniam modi animi?
             </p>
-            <a href="" class="hero-btn">Visit us to Know more</a>
+            <a href="" class="hero-btn">Click here to Know more</a>
         </div>
     </section>
 
@@ -147,6 +150,19 @@
         }
         function hideMenu() {
             navLinks.style.right = "-2000px"
+        }
+
+        var text = ["Discover", "Grow", "Explore"];
+        var counter = 0;
+        var elem = document.getElementById("changeText");
+        var inst = setInterval(change, 1500);
+
+        function change() {
+            elem.innerHTML = text[counter];
+            counter++;
+            if (counter >= text.length) {
+                counter = 0;
+            }
         }
     </script>
 
