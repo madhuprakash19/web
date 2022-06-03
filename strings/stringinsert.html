@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const insert = (s1, s2, p) => {
+            s1 = s1.slice(0, p) + s2 + s1.slice(p);
+            return s1;
+        }
+
+
+        a = prompt("Enter string");
+        b = prompt("Enter string to be inserted");
+        c = Number(prompt("Enter position where string to be inserted"))
+        if (c < a.length) {
+            a = insert(a, b, c);
+            document.write(a);
+        }
+        else {
+            document.write("String length is smaller than ther insert position length")
+        }
+    </script>
+</body>
+
+</html>
