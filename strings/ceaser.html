@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ceaser = (text, shift) => {
+            var res = "";
+            text = text.toUpperCase();
+            // console.log(text);
+            for (var i = 0; i < text.length; i++) {
+                let ch = String.fromCharCode(((text.charCodeAt(i) + shift - 65) % 26) + 65);
+                res += ch;
+            }
+            return res;
+        }
+
+        var text = prompt("Enter text");
+        var shift = Number(prompt("Enter shift pattern"));
+        const code = ceaser(text, shift);
+        document.write("Text : " + text);
+        document.write("<br>Shift : " + shift);
+        document.write("<br>Encrypted : " + code);
+    </script>
+</body>
+
+</html>
